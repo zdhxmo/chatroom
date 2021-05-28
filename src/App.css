@@ -14,3 +14,18 @@
     background-color: #ededed;
     box-shadow: -1px 4px 10px -6px rgba(0, 0, 0, 0.5);
 }
+
+@media only screen and (max-width:375px) {
+    .app__body {
+        display: flex;
+        flex-direction: column;
+    }
+    .app__sidebar {
+        flex: 0.3;
+        height: 30vh;
+    }
+    .app__chat {
+        flex: 0.7;
+        height: 100vh;
+    }
+}

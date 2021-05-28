@@ -16,13 +16,13 @@ function App() {
           <Login />
         ) : (
           <Router>
-            <Sidebar />
+              <Sidebar className="app__sidebar" />
             <Switch>
               <Route path="/rooms/:roomId">
-                <Chat />
+                  <Chat className="app__chat" />
               </Route>
               <Route path="/">
-                <Chat />
+                <Chat className="app__chat" />
               </Route>
             </Switch>
           </Router>

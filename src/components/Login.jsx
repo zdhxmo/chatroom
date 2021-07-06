@@ -4,6 +4,7 @@ import "./Login.css";
 import { auth, provider } from "../firebase";
 import { useStateValue } from "../StateProvider";
 import { actionTypes } from "../reducer";
+import Logo from "../img/logo.png"
 
 const Login = () => {
   const [{}, dispatch] = useStateValue();
@@ -23,11 +24,11 @@ const Login = () => {
     <div className="login">
       <div className="login__container">
         <img
-          src="https://images.creativemarket.com/0.1.0/ps/1477801/580/386/m1/fpnw/wm0/1-.jpg?1469342761&s=7c71ec76d35cf41c83bb560123cb6e4c"
+          src= {Logo}
           alt=""
         />
         <div className="login__text">
-          <h1>Sign in to chatrooms</h1>
+          <h1>Sign in to turtleChats</h1>
         </div>
 
         <Button type="submit" onClick={signIn}>

@@ -1,17 +1,29 @@
 import React, { useEffect, useState } from "react";
-import { Avatar, IconButton } from "@material-ui/core";
-import { SearchOutlined } from "@material-ui/icons";
-import DonutLargeIcon from "@material-ui/icons/DonutLarge";
-import MenuIcon from "@material-ui/icons/Menu";
+import { Avatar } from "@material-ui/core";
 import "./Sidebar.css";
 import SidebarChat from "./SidebarChat";
 import db from "../firebase";
 import { useStateValue } from "../StateProvider";
+import { auth } from "../firebase";
+import Button from "@material-ui/core/Button";
+import { useHistory } from "react-router-dom";
+import { actionTypes } from "../reducer";
 
 const Sidebar = () => {
   const [rooms, setRooms] = useState([]);
   const [{ user }, dispatch] = useStateValue();
-  const [open, setOpen] = useState(false);
+  const history = useHistory();
+
+  const signOut = () => {
+    if (user) {
+      auth.signOut();
+      history.replace("/");
+      dispatch({
+        type: actionTypes.SET_USER,
+        user: null,
+      });
+    }
+  };
 
   useEffect(() => {
     const unsubscribe = db.collection("rooms").onSnapshot((snapshot) =>
@@ -32,21 +44,10 @@ const Sidebar = () => {
     <div className="sidebar">
       <div className="sidebar__header">
         <Avatar src={user?.photoURL} />
-        {/* <div className="sidebar__headerRight">
-          <IconButton>
-            <MenuIcon onClick={disappear} />
-          </IconButton>
-        </div> */}
+        <Button variant="contained" color="secondary" onClick={signOut}>
+          Sign Out
+        </Button>
       </div>
-
-      {/* <div className="sidebar__search">
-        <div className="sidebar__searchContainer">
-          <IconButton>
-            <SearchOutlined />
-          </IconButton>
-          <input type="text" placeholder="Search or start new chat..." />
-        </div>
-      </div> */}
 
       <div className="sidebar__chats">
         <SidebarChat addNewChat />

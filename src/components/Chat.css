@@ -22,13 +22,7 @@
 }
 
 .chat__headerInfo>p {
-    color: gray;
-}
-
-.chat__headerRight {
-    display: flex;
-    justify-content: space-between;
-    min-width: 100px;
+    color: black;
 }
 
 .chat__body {
@@ -94,4 +88,32 @@
 
 .chat__footer > .MuiSvgIcon-root {
     padding: 5px;
+}
+
+@media
+  only screen and (-webkit-min-device-pixel-ratio: 2.625),
+  only screen and (   min--moz-device-pixel-ratio: 2.625),
+  only screen and (     -o-min-device-pixel-ratio: 2.625/1),
+  only screen and (        min-device-pixel-ratio: 2.625),
+  only screen and (                min-resolution: 441dpi),
+  only screen and (                min-resolution: 2.625dppx) { 
+    .chat {
+        margin-top: 150px;
+        width: 90vw;
+        margin-left: -500px;
+    }
+    .chat__header {
+        width: 90vw;
+        margin-left: 50px;
+    }
+    .chat__body {
+        margin-left: 30px;
+    }
+    .chat__message {
+        font-size: 10px;
+    }
+    .chat__footer {
+        width: 100vw;
+        margin-left: 50px;
+    }
 }

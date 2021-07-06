@@ -63,18 +63,6 @@ const Chat = () => {
               ).toUTCString()}  
           </p>
         </div>
-
-        <div className="chat__headerRight">
-          <IconButton>
-            <SearchOutlined />
-          </IconButton>
-          <IconButton>
-            <AttachFile />
-          </IconButton>
-          <IconButton>
-            <MoreVertIcon />
-          </IconButton>
-        </div>
       </div>
 
       <div className="chat__body">
@@ -109,6 +97,10 @@ const Chat = () => {
         <IconButton>
           <MicIcon />
         </IconButton>
+
+        <IconButton>
+            <AttachFile />
+          </IconButton>
       </div>
     </div>
   );

@@ -24,3 +24,18 @@ a {
     margin-left: 15px;
     text-decoration: none;
 }
+
+@media
+  only screen and (-webkit-min-device-pixel-ratio: 2.625),
+  only screen and (   min--moz-device-pixel-ratio: 2.625),
+  only screen and (     -o-min-device-pixel-ratio: 2.625/1),
+  only screen and (        min-device-pixel-ratio: 2.625),
+  only screen and (                min-resolution: 441dpi),
+  only screen and (                min-resolution: 2.625dppx) { 
+    .sidebarChat {
+        display: flex;
+        flex-direction: row;
+        width: 90vw;
+    }
+
+}
